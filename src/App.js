@@ -8,10 +8,12 @@ function App() {
 
   //useEffect runs a piece of code base on a specific condition
   useEffect( () => {
-    //this is where the code runs
     db.collection('posts').onSnapshot(snapshot => {
       //listener : everysingle time the db changes, it refreshes
-      setPosts(snapshot.docs.map(doc => doc.data()));
+      setPosts(snapshot.docs.map(doc => ({
+        id: doc.id,
+        post: doc.data()
+      })));
     })
   }, []);
 
@@ -26,10 +28,12 @@ function App() {
       </div>
 
       {
-        posts.map(post => (
-          <Post username={post.username} caption={post.caption} imageUrl={post.imageUrl}/>
+        posts.map(({id, post}) => (
+          //having the key allows the re-rendering only to happen for new post
+          <Post key={id} username={post.username} caption={post.caption} imageUrl={post.imageUrl}/>
         ))
       }
+
     </div>
   );
 }
