@@ -14,3 +14,12 @@
   padding: 1rem 1.5rem 0.5rem 1.5rem;
   object-fit: contain;
 }
+
+.app__signup {
+  display: flex;
+  flex-direction: column;
+}
+
+.MuiInput-underline {
+  margin-bottom: 1.5rem;
+}

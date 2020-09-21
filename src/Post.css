@@ -1,8 +1,9 @@
 .post {
-  margin-bottom: 1rem;
+  margin: 0rem auto 1rem auto;
   background-color: white;
   max-width: 600px;
   border: 1px solid lightgray;
+  border-radius: 0.2rem;
 }
 
 .post__header {
