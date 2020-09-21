@@ -5,7 +5,7 @@ import { db, auth } from './firebase';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button, Input, InputLabel } from '@material-ui/core';
-
+import ImageUpload from './ImageUpload';
 
 // Modal styling
 function getModalStyle() {
@@ -66,7 +66,7 @@ function App() {
 
   //useEffect runs a piece of code base on a specific condition
   useEffect( () => {
-    db.collection('posts').onSnapshot(snapshot => {
+    db.collection('posts').orderBy('timestamp','desc').onSnapshot(snapshot => {
       //listener : everysingle time the db changes, it refreshes
       setPosts(snapshot.docs.map(doc => ({
         id: doc.id,
@@ -100,6 +100,12 @@ function App() {
 
   return (
     <div className="app">
+
+      {user?.displayName ? (
+        <ImageUpload username={user.displayName}/>
+      ) : (
+        <p>You need to login to upload</p>
+      )}
 
       <Modal
         open={open}
