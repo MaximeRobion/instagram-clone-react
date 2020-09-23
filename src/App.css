@@ -13,6 +13,14 @@
   border-bottom: solid 1px lightgray;
   padding: 1rem 1.5rem 0.5rem 1.5rem;
   object-fit: contain;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.app__headerImage {
+  object-fit: contain;
 }
 
 .app__signup {

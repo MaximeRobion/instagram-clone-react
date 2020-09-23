@@ -65,22 +65,33 @@ function ImageUpload({username}) {
   }
 
   return (
-    <div>
+    <div className="imageupload">
+      <div className="imageupload__picture">
+        <InputLabel>Select a picture:</InputLabel>
+        <Input type="file" onChange={handleChange}/>
+      </div>
 
-        <progress value={progress} max="100"/>
-        <InputLabel>Caption:</InputLabel>
+      <div className="imageupload__caption">
+      <InputLabel>Caption:</InputLabel>
         <Input
           type="text"
           onChange={event => setCaption(event.target.value)}
           value={caption}
           />
+      </div>
 
-        <InputLabel>Select a file:</InputLabel>
-        <Input type="file" onChange={handleChange}/>
+      {image&&caption? (
+        console.log("ok to upload"),
+        <div className="imageupload__button">
+          <progress className="imageupload__progress" value={progress} max="100"/>
+          <Button variant="contained" color="primary" component="span" onClick={handleUpload}>
+            Upload
+          </Button>
+        </div>
+      ) : (
+        console.log("not ok to upload, because no images selected")
+      )}
 
-        <Button onClick={handleUpload}>
-          Upload
-        </Button>
     </div>
 
   )
