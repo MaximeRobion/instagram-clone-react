@@ -1,4 +1,7 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
+import 'firebase/auth'; // If using Firebase authentication
+import 'firebase/storage';  // If using Firebase storage
+import 'firebase/database'; // If using Firebase database
 
 const firebaseApp = firebase.initializeApp({
   apiKey: "AIzaSyBT8A6Ct67GULgIpK1YqscXgTmK-2BeKp8",
