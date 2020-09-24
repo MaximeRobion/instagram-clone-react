@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Button, Input, InputLabel } from '@material-ui/core';
 import './ImageUpload.css';
 import { storage, db } from './firebase';
-import firebase from "firebase";
+import * as firebase from "firebase/app";
 
 function ImageUpload({username}) {
   const [caption, setCaption] = useState('');
