@@ -23,5 +23,36 @@
 
 .post__caption {
   font-weight: normal;
+  padding: 0.8rem 0.8rem 0.4rem 0.8rem;
+}
+
+.post__commentBox {
+  display: flex;
+  margin-top: 0.25rem;
+}
+
+.post__input {
+  flex: 1;
+  border: none;
   padding: 0.8rem;
+  font-size: 1rem;
+  border-top: 1px solid #EEEEEE;
+}
+.post__button {
+  flex: 0;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  background-color: transparent;
+  border-top: 1px solid #EEEEEE;
+  color: rgba(var(--d69,0,149,246),1);
+  font-weight: 700;
+}
+.post__button:disabled {
+  color: rgba(var(--d69,0,149,246),0.3);
+  font-weight: 400;
+}
+
+.post__comments {
+  padding: 0.4rem 0.8rem 0.4rem 0.8rem;
 }
